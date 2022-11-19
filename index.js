@@ -20,16 +20,11 @@
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const port = process.env.PORT || 3001;
-const {
-  loadAdmin,
-  createUser,
-} = require("../back-end/src/controllers/userControl");
-
+const { loadAdmin } = require("./src/controllers/userControl");
 
 conn.sync({ force: false }).then(() => {
-  
   server.listen(port, () => {
     console.log(`Listening at ${port}`); // eslint-disable-line no-console
   });
-  loadAdmin()
+  loadAdmin();
 });

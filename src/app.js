@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const routes = require("./routes/index.js"); //all router are routes
 
-
 require("./db.js");
 
 const server = express();
@@ -22,7 +21,10 @@ server.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept,token"
   );
-  res.header("Access-Control-Allow-Methods", "GET, POST,PATCH, OPTIONS, PUT, DELETE");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST,PATCH, OPTIONS, PUT, DELETE"
+  );
   next();
 });
 

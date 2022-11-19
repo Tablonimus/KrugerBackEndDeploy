@@ -100,6 +100,8 @@ async function loadAdmin() {
   let last_name = "Admin";
   let email = "admin@admin.com";
   let password = "admin";
+  let admin = true;
+
   const newAdmin = await User.findOrCreate({
     where: {
       identification,
@@ -107,6 +109,7 @@ async function loadAdmin() {
       last_name,
       email,
       password,
+      admin
     },
   });
   console.log(newAdmin);
